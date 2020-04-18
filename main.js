@@ -55,7 +55,7 @@ class Fence extends GameObject {
     this.width = 20;
     this.height = 20;
     this.color = 'black';
-    this.speed = 1.6
+    this.speed = 3.2
   }
 
   // Called every frame
@@ -66,12 +66,12 @@ class Fence extends GameObject {
     // If fence went off the screen
     if (this.position.x <0 ) {
       this.position.x = 1000
-      this.speed += .25
+      this.speed += .5
       this.game.score += 1
     }
 
-    if (this.speed > 8) {
-      this.speed = 8
+    if (this.speed > 17) {
+      this.speed = 17
     }
   }
 }
@@ -99,7 +99,7 @@ class Player extends GameObject {
   update() {
     // if we are in the air
     if (this.position.y < 250) {
-      this.position.y += .5 // apply gravity
+      this.position.y += 1 // apply gravity
     } else { // if we hit the ground
       this.touchingFloor = true
     }
